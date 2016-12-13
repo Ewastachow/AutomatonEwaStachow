@@ -1,0 +1,2 @@
+# AutomatonEwaStachow
+Programowanie Obiektowe Project
