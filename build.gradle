@@ -1,0 +1,23 @@
+group 'AutomatonES'
+version '1.0-SNAPSHOT'
+
+// Java support
+apply plugin: 'java'
+
+// Eclipse IDE project generation support
+apply plugin: 'eclipse'
+
+// Idea InteliJ IDE project generation support
+apply plugin: 'idea'
+
+//apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
