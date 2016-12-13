@@ -19,9 +19,7 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import java.net.URL;
 import java.util.Observable;
-import java.util.ResourceBundle;
 
 /**
  * Created by EwaStachów on 10/12/2016.
@@ -35,46 +33,7 @@ public class AutomatonGUIController extends Observable {
     private String structure;
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private ToggleGroup gamesTab;
-
-    @FXML
-    private ToggleButton gameOfLifeToggleButton;
-
-    @FXML
-    private ToggleButton quadLifeToggleButton1;
-
-    @FXML
-    private ToggleButton langtonAntToggleButton;
-
-    @FXML
-    private ToggleButton wireworldToggleButton;
-
-    @FXML
-    private ToggleButton oneDimToggleButton;
-
-    @FXML
-    private Button startButton;
-
-    @FXML
-    private Button stopButton;
-
-    @FXML
-    private Button nextButton;
-
-    @FXML
-    private Button resetButton;
-
-    @FXML
     private ToggleButton moorToggleButton;
-
-    @FXML
-    private ToggleGroup neighborhoodToggleButton;
 
     @FXML
     private ToggleButton vonNeumanToggleButton;
