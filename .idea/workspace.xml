@@ -4,8 +4,6 @@
     <list default="true" id="b191ebdd-798e-4a82-9a9e-6e3826290724" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/gui/App.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/gui/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/gui/AutomatonGUIController.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/gui/AutomatonGUIController.java" />
     </list>
     <ignored path="AutomatonEwaStachow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +42,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="272">
+              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -355,7 +353,7 @@
         <entry key="$PROJECT_DIR$/../../../../Dropbox/Studia/Warsztaty Java/2016.12.08/java-gradle-services-test-solution" value="2962419978000" />
         <entry key="$PROJECT_DIR$/../../../../Dropbox/Studia/Warsztaty Java/Testowanie gradle/java-gradle-based-twitter-master" value="2959999854000" />
         <entry key="$PROJECT_DIR$/../../../AutomatyKomorkoweES" value="2957604935259" />
-        <entry key="$PROJECT_DIR$" value="2963298864350" />
+        <entry key="$PROJECT_DIR$" value="2963300083695" />
         <entry key="$PROJECT_DIR$/../PersonJavaProjectGradle" value="2955524038265" />
         <entry key="A:/Download/InternetDownloadManager/Compressed/AutomatyKomorkoweES-master" value="2962836620000" />
         <entry key="$USER_HOME$/Desktop/Projekt_bezplikov_.class/Automaty" value="1478473872578" />
@@ -1190,12 +1188,12 @@
       <option name="presentableId" value="Default" />
       <updated>1481648600041</updated>
       <workItem from="1481648605918" duration="249000" />
-      <workItem from="1481648907731" duration="1653000" />
+      <workItem from="1481648907731" duration="2272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1902000" />
+    <option name="totallyTimeSpent" value="2521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
@@ -1323,8 +1321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="272">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
           <folding />
         </state>
       </provider>
