@@ -25,6 +25,7 @@ public abstract class Automaton {
         this.cells = cells;
         this.neighborhoodStrategy = neighborhoodStrategy;
         this.stateFactory = stateFactory;
+
     }
 
     public CellState getStateOfCoords(CellCoordinates cc) {
@@ -41,14 +42,6 @@ public abstract class Automaton {
 
     public void setCells(Map<CellCoordinates, CellState> cells) {
         this.cells = cells;
-    }
-
-    public CellNeighborhood getNeighborhoodStrategy() {
-        return neighborhoodStrategy;
-    }
-
-    public void setNeighborhoodStrategy(CellNeighborhood neighborhoodStrategy) {
-        this.neighborhoodStrategy = neighborhoodStrategy;
     }
 
     public CellStateFactory getStateFactory() {

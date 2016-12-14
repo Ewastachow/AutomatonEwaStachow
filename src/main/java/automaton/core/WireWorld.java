@@ -35,11 +35,10 @@ public class WireWorld extends Automaton2Dim {
         Set<CellCoordinates> coords = new TreeSet<>();
         for (int i = 1; i <= getWidth(); i++)
             for (int j = 1; j <= getHeight(); j++) {
-                CellCoordinates cc = new Coords2D(i, j);
-                coords.add(cc);
+                coords.add(new Coords2D(i, j));
             }
-        for (CellCoordinates key : coords) {
-            cells.put(key, cellSF.initialState(key));
+        for (CellCoordinates i : coords) {
+            cells.put(i, cellSF.initialState(i));
         }
         return new WireWorld(cells, cellN, cellSF);
     }

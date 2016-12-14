@@ -7,7 +7,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by yevvy on 03/12/2016.
+ * Created by EwaStachów on 21/11/2016.
+ *
+ * @author EwaStachów
+ * @version 1.0
+ *          Klasa generująca sąsiedztwo na podstawie stykania się bokami komórek
  */
 public class VonNeumanNeighborhood implements CellNeighborhood {
 
@@ -23,6 +27,14 @@ public class VonNeumanNeighborhood implements CellNeighborhood {
         this.width = 20;
     }
 
+    /**
+     * Konstruktor parametryczny
+     *
+     * @param wrapping czy plansza ma być zawijana? true - tak, false - nie
+     * @param radious  promień sąsiedztwa
+     * @param width    szerokość planszy
+     * @param height   wysokość planszy
+     */
     public VonNeumanNeighborhood(boolean wrapping, int radious, int width, int height) {
         this.wrapping = wrapping;
         this.radious = radious;
@@ -30,6 +42,10 @@ public class VonNeumanNeighborhood implements CellNeighborhood {
         this.width = width;
     }
 
+    /**
+     * @param cell komórka której sąsiadów będziemy wyznaczać
+     * @return Po zaimplementowaniu ma zwracać sąsiadów komórki podanej jako parametr
+     */
     @Override
     public Set<CellCoordinates> cellNeighbors(CellCoordinates cell) {
 

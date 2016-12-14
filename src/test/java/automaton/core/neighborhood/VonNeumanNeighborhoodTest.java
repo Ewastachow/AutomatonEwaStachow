@@ -30,4 +30,26 @@ public class VonNeumanNeighborhoodTest {
                 cellNeighborsCoordinatesInside,
                 vnn.cellNeighbors(cellCoordinatesInside));
     }
+
+    @Test
+    public void cellNeighborsWrappingTest() {
+
+        VonNeumanNeighborhood vnn = new VonNeumanNeighborhood(true,2,10,5);
+
+        CellCoordinates cellCoordinatesInside = new Coords2D(1, 3);
+
+        Set<CellCoordinates> cellNeighborsCoordinatesInside = new HashSet<>();
+        cellNeighborsCoordinatesInside.add(new Coords2D(1, 0));
+        cellNeighborsCoordinatesInside.add(new Coords2D(1, 1));
+        cellNeighborsCoordinatesInside.add(new Coords2D(1, 2));
+        cellNeighborsCoordinatesInside.add(new Coords2D(1, 4));
+        cellNeighborsCoordinatesInside.add(new Coords2D(9, 3));
+        cellNeighborsCoordinatesInside.add(new Coords2D(0, 3));
+        cellNeighborsCoordinatesInside.add(new Coords2D(2, 3));
+        cellNeighborsCoordinatesInside.add(new Coords2D(3, 3));
+
+        Assert.assertEquals("VonNeumanNeighborhood cell [1,3] in 10x5, radious = 2, wrapping",
+                cellNeighborsCoordinatesInside,
+                vnn.cellNeighbors(cellCoordinatesInside));
+    }
 }

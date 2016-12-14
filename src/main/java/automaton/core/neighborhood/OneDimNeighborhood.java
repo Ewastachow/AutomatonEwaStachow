@@ -7,7 +7,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by EwaStachów on 12/12/2016.
+ * Created by EwaStachów on 21/11/2016.
+ *
+ * @author EwaStachów
+ * @version 1.0
+ *          Klasa generująca sąsiedztwo na podstawie stykania się bokami komórek
  */
 public class OneDimNeighborhood implements CellNeighborhood {
 
@@ -15,12 +19,23 @@ public class OneDimNeighborhood implements CellNeighborhood {
     private int radious;
     private int size;
 
+    /**
+     * Konstruktor parametryczny
+     *
+     * @param wrapping czy plansza ma być zawijana? true - tak, false - nie
+     * @param radious  promień sąsiedztwa
+     * @param size     szerokość planszy
+     */
     public OneDimNeighborhood(boolean wrapping, int radious, int size) {
         this.wrapping = wrapping;
         this.radious = radious;
         this.size = size;
     }
 
+    /**
+     * @param cell komórka której sąsiadów będziemy wyznaczać
+     * @return Po zaimplementowaniu ma zwracać sąsiadów komórki podanej jako parametr
+     */
     @Override
     public Set<CellCoordinates> cellNeighbors(CellCoordinates cell) {
 

@@ -63,7 +63,6 @@ public class GameOfLifeTest {
         Coords2D tmpCoords = new Coords2D(20, 30);
 
         Cell blueCell = new Cell(tmpCoords, QuadState.BLUE);
-        Cell deadCell = new Cell(tmpCoords, QuadState.DEAD);
 
         Set<Cell> neighbors1Cell = new HashSet<>();
         neighbors1Cell.add(new Cell(tmpCoords, QuadState.DEAD));
