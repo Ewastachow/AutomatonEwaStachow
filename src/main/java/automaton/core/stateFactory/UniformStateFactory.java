@@ -5,6 +5,8 @@ import automaton.core.state.CellState;
 
 /**
  * Created by EwaStachów on 03/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class UniformStateFactory implements CellStateFactory {
 

@@ -2,6 +2,8 @@ package automaton.core.state;
 
 /**
  * Created by EwaStachów on 10/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class LangtonCell implements CellState {
 

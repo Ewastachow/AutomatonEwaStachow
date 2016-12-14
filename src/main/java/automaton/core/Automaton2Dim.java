@@ -10,6 +10,8 @@ import java.util.Map;
 
 /**
  * Created by EwaStachów on 03/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public abstract class Automaton2Dim extends Automaton {
     private int width;
@@ -50,7 +52,7 @@ public abstract class Automaton2Dim extends Automaton {
 
     @Override
     protected CellCoordinates initialCoordinates(CellCoordinates cellC) {
-        return new Coords2D(-1, -1);
+        return new Coords2D(0, -1);
     }
 
     @Override

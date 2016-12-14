@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 /**
  * Created by EwaStachów on 10/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class App extends Application {
 

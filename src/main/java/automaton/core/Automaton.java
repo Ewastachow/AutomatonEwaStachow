@@ -5,15 +5,12 @@ import automaton.core.neighborhood.CellNeighborhood;
 import automaton.core.state.CellState;
 import automaton.core.stateFactory.CellStateFactory;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by EwaStachów on 16/11/2016.
  */
-public abstract class Automaton {
+public abstract class Automaton implements Iterable<Cell>, Cloneable{
     private Map<CellCoordinates, CellState> cells = new TreeMap<>();
     private CellNeighborhood neighborhoodStrategy;
     private CellStateFactory stateFactory;
@@ -26,6 +23,41 @@ public abstract class Automaton {
         this.neighborhoodStrategy = neighborhoodStrategy;
         this.stateFactory = stateFactory;
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Automaton automaton = (Automaton) o;
+
+        if (cells != null ? !cells.equals(automaton.cells) : automaton.cells != null) return false;
+        if (neighborhoodStrategy != null ? !neighborhoodStrategy.equals(automaton.neighborhoodStrategy) : automaton.neighborhoodStrategy != null)
+            return false;
+        return stateFactory != null ? stateFactory.equals(automaton.stateFactory) : automaton.stateFactory == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = cells != null ? cells.hashCode() : 0;
+        result = 31 * result + (neighborhoodStrategy != null ? neighborhoodStrategy.hashCode() : 0);
+        result = 31 * result + (stateFactory != null ? stateFactory.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public Object clone(){
+        try {
+            super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+
+        Automaton duplicate = newInstance(stateFactory,neighborhoodStrategy);
+        duplicate.cells = new TreeMap<>(cells);
+        return duplicate;
     }
 
     public CellState getStateOfCoords(CellCoordinates cc) {
@@ -61,8 +93,12 @@ public abstract class Automaton {
                 '}';
     }
 
-    public class CellIterator {
+    public class CellIterator implements Iterator<Cell> {
         private CellCoordinates currentState;
+
+        public CellIterator(CellCoordinates currentCoordinates) {
+            currentState = initialCoordinates(currentCoordinates);
+        }
 
         public void setCurrentState(CellCoordinates currentState) {
             this.currentState = currentState;
@@ -73,7 +109,12 @@ public abstract class Automaton {
         }
 
         public Cell next() {
-            return new Cell(nextCoordinates(currentState), cells.get(nextCoordinates(currentState)));
+            if(hasNext()){
+
+                currentState=nextCoordinates(currentState);
+                return new Cell(currentState, cells.get(currentState));
+            }
+            else throw new NoSuchElementException();
         }
 
         public void setState(CellState cellS) {
@@ -83,6 +124,12 @@ public abstract class Automaton {
 
     public Automaton nextstate() {
         Automaton letGetStartedAgain = newInstance(stateFactory, neighborhoodStrategy);
+//        CellIterator iterator = (CellIterator)letGetStartedAgain.iterator();
+//        for (Cell i: this) {
+//            iterator.next();
+//            iterator.setState(nextCellState(i,
+//                    mapCoordinates(neighborhoodStrategy.cellNeighbors(i.coords))));
+//        }
         Map<CellCoordinates, CellState> newCells = new TreeMap<>();
         for (Map.Entry<CellCoordinates, CellState> i : cells.entrySet()) {
             Cell cell = new Cell(i.getKey(), i.getValue());
@@ -90,6 +137,8 @@ public abstract class Automaton {
                     this.mapCoordinates(neighborhoodStrategy.cellNeighbors(i.getKey()))));
         }
         letGetStartedAgain.setCells(newCells);
+
+
         return letGetStartedAgain;
     }
 
@@ -97,8 +146,9 @@ public abstract class Automaton {
         cells.putAll(strcture);
     }
 
-    public CellIterator cellIterator() {
-        return new CellIterator();
+    @Override
+    public Iterator<Cell> iterator() {
+        return new CellIterator(null);
     }
 
     protected abstract Automaton newInstance(CellStateFactory cellSF, CellNeighborhood cellN);

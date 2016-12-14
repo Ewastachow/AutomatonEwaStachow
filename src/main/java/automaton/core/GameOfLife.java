@@ -1,7 +1,6 @@
 package automaton.core;
 
 import automaton.core.coords.CellCoordinates;
-import automaton.core.coords.Coords2D;
 import automaton.core.neighborhood.CellNeighborhood;
 import automaton.core.state.BinaryState;
 import automaton.core.state.CellState;
@@ -10,11 +9,11 @@ import automaton.core.stateFactory.CellStateFactory;
 
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
  * Created by EwaStachów on 10/11/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class GameOfLife extends Automaton2Dim {
     private int rule1;
@@ -46,17 +45,7 @@ public class GameOfLife extends Automaton2Dim {
 
     @Override
     protected Automaton newInstance(CellStateFactory cellSF, CellNeighborhood cellN) {
-
-        Map<CellCoordinates, CellState> cellsMap = new TreeMap<CellCoordinates, CellState>();
-        Set<CellCoordinates> coordsSet = new TreeSet<CellCoordinates>();
-        for (int i = 0; i < getWidth(); i++)
-            for (int j = 0; j < getHeight(); j++) {
-                coordsSet.add(new Coords2D(i, j));
-            }
-        for (CellCoordinates j : coordsSet) {
-            cellsMap.put(j, cellSF.initialState(j));
-        }
-        return new GameOfLife(cellsMap, cellN, cellSF, super.getWidth(), super.getHeight(), rule1, rule2, rule3, quadLife);
+        return new GameOfLife(super.getCells(), cellN, cellSF, super.getWidth(), super.getHeight(), rule1, rule2, rule3, quadLife);
     }
 
     @Override

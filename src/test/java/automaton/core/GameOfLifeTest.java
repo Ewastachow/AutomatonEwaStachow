@@ -77,4 +77,28 @@ public class GameOfLifeTest {
         Assert.assertEquals("Blue Cell, 2 Red & 3 Green neighbors ",
                 QuadState.DEAD, gol.nextCellState(blueCell, neighbors1Cell));
     }
+
+    @Test
+    public void nextCellStateTest2() {
+
+        GameOfLife gol = new GameOfLife(null, null, null,
+                20, 20, 4, 3, 3, false);
+        Coords2D tmpCoords = new Coords2D(20, 30);
+
+        Cell aliveCell = new Cell(tmpCoords, BinaryState.ALIVE);
+
+        Set<Cell> neighbors1Cell = new HashSet<>();
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.ALIVE));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.DEAD));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.DEAD));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.ALIVE));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.ALIVE));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.ALIVE));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.DEAD));
+        neighbors1Cell.add(new Cell(tmpCoords, BinaryState.DEAD));
+
+        Assert.assertEquals("Alive Cell & 4/8 Alive neighbors should be Alive in 43/3",
+                BinaryState.ALIVE, gol.nextCellState(aliveCell, neighbors1Cell));
+
+    }
 }

@@ -83,4 +83,39 @@ public class LangtonAntTest {
 
     }
 
+    @Test
+    public void nextCellStateAnt2() {
+
+
+        LangtonAnt langtonAnt = new LangtonAnt(null,null,null,5,5);
+
+        Coords2D cellCoords = new Coords2D(2, 4);
+
+        Coords2D cellCoords1 = new Coords2D(1, 0);
+        Coords2D cellCoords2 = new Coords2D(2, 0);
+        Coords2D cellCoords3 = new Coords2D(3, 0);
+        Coords2D cellCoords4 = new Coords2D(1, 3);
+        Coords2D cellCoords5 = new Coords2D(2, 3);
+        Coords2D cellCoords6 = new Coords2D(3, 3);
+        Coords2D cellCoords7 = new Coords2D(1, 4);
+        Coords2D cellCoords8 = new Coords2D(3, 4);
+
+        Cell cell = new Cell(cellCoords, new LangtonCell(BinaryState.ALIVE, AntState.NONE));
+
+        Set<Cell> set = new HashSet<>();
+        set.add(new Cell(cellCoords1, new LangtonCell(BinaryState.DEAD, AntState.NONE)));
+        set.add(new Cell(cellCoords2, new LangtonCell(BinaryState.ALIVE, AntState.EAST)));
+        set.add(new Cell(cellCoords3, new LangtonCell(BinaryState.DEAD, AntState.NONE)));
+        set.add(new Cell(cellCoords4, new LangtonCell(BinaryState.ALIVE, AntState.NONE)));
+        set.add(new Cell(cellCoords5, new LangtonCell(BinaryState.DEAD, AntState.NONE)));
+        set.add(new Cell(cellCoords6, new LangtonCell(BinaryState.ALIVE, AntState.NONE)));
+        set.add(new Cell(cellCoords7, new LangtonCell(BinaryState.ALIVE, AntState.NONE)));
+        set.add(new Cell(cellCoords8, new LangtonCell(BinaryState.DEAD, AntState.NONE)));
+
+        Assert.assertEquals("Langton should stay Alive None",
+                new LangtonCell(BinaryState.ALIVE, AntState.NONE),
+                langtonAnt.nextCellState(cell, set));
+
+    }
+
 }

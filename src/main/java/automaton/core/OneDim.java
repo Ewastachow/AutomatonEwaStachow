@@ -9,11 +9,11 @@ import automaton.core.stateFactory.CellStateFactory;
 
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
- * Created by yevvy on 12/12/2016.
+ * Created by EwaStachów on 12/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class OneDim extends Automaton1Dim {
     private int rules;
@@ -36,15 +36,7 @@ public class OneDim extends Automaton1Dim {
 
     @Override
     protected Automaton newInstance(CellStateFactory cellSF, CellNeighborhood cellN) {
-        Map<CellCoordinates, CellState> cellsMap = new TreeMap<>();
-        Set<CellCoordinates> coordsSet = new TreeSet<>();
-        for (int i = 0; i < getSize(); i++) {
-            coordsSet.add(new Coords1D(i));
-        }
-        for (CellCoordinates j : coordsSet) {
-            cellsMap.put(j, cellSF.initialState(j));
-        }
-        return new OneDim(cellsMap, cellN, cellSF, super.getSize(), rules);
+        return new OneDim(super.getCells(), cellN, cellSF, super.getSize(), rules);
 
     }
 

@@ -23,6 +23,9 @@ import java.util.Observable;
 
 /**
  * Created by EwaStachów on 10/12/2016.
+ * GUI
+ * @author EwaStachów
+ * @version 1.0
  */
 public class AutomatonGUIController extends Observable {
 

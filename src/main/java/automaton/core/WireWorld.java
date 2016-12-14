@@ -1,7 +1,6 @@
 package automaton.core;
 
 import automaton.core.coords.CellCoordinates;
-import automaton.core.coords.Coords2D;
 import automaton.core.neighborhood.CellNeighborhood;
 import automaton.core.state.CellState;
 import automaton.core.state.WireElectronState;
@@ -9,11 +8,11 @@ import automaton.core.stateFactory.CellStateFactory;
 
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 /**
  * Created by EwaStachów on 03/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class WireWorld extends Automaton2Dim {
 
@@ -31,16 +30,7 @@ public class WireWorld extends Automaton2Dim {
 
     @Override
     protected Automaton newInstance(CellStateFactory cellSF, CellNeighborhood cellN) {
-        Map<CellCoordinates, CellState> cells = new TreeMap<>();
-        Set<CellCoordinates> coords = new TreeSet<>();
-        for (int i = 1; i <= getWidth(); i++)
-            for (int j = 1; j <= getHeight(); j++) {
-                coords.add(new Coords2D(i, j));
-            }
-        for (CellCoordinates i : coords) {
-            cells.put(i, cellSF.initialState(i));
-        }
-        return new WireWorld(cells, cellN, cellSF);
+        return new WireWorld(super.getCells(), cellN, cellSF);
     }
 
     @Override

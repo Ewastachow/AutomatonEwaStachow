@@ -8,6 +8,8 @@ import java.util.TreeMap;
 
 /**
  * Created by EwaStachów on 03/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public class GeneralStateFactory implements CellStateFactory {
 

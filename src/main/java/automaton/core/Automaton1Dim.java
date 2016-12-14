@@ -10,6 +10,8 @@ import java.util.Map;
 
 /**
  * Created by EwaStachów on 03/12/2016.
+ * @author EwaStachów
+ * @version 1.0
  */
 public abstract class Automaton1Dim extends Automaton {
 

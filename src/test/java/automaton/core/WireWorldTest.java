@@ -37,7 +37,7 @@ public class WireWorldTest {
     }
 
     @Test
-    public void nextCellStateElectronTest() throws Exception {
+    public void nextCellStateElectronHeadTest() throws Exception {
 
         WireWorld wireWorld = new WireWorld();
         Coords2D tmpCoords = new Coords2D(20, 30);
@@ -54,8 +54,56 @@ public class WireWorldTest {
         neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.VOID));
         neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.VOID));
 
-        Assert.assertEquals("Void cell should always stay void",
+        Assert.assertEquals("Head cell should stay Tail",
                 WireElectronState.ELECTRON_TAIL, wireWorld.nextCellState(headCell,
+                        neighbors1Cell));
+
+    }
+
+    @Test
+    public void nextCellStateElectronTailTest() throws Exception {
+
+        WireWorld wireWorld = new WireWorld();
+        Coords2D tmpCoords = new Coords2D(20, 30);
+
+        Cell tailCell = new Cell(tmpCoords, WireElectronState.ELECTRON_TAIL);
+
+        Set<Cell> neighbors1Cell = new HashSet<>();
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.VOID));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.ELECTRON_TAIL));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.ELECTRON_HEAD));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.ELECTRON_TAIL));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.VOID));
+
+        Assert.assertEquals("Tail cell should become wire",
+                WireElectronState.WIRE, wireWorld.nextCellState(tailCell,
+                        neighbors1Cell));
+
+    }
+
+    @Test
+    public void nextCellStateWireTest() throws Exception {
+
+        WireWorld wireWorld = new WireWorld();
+        Coords2D tmpCoords = new Coords2D(20, 30);
+
+        Cell wireCell = new Cell(tmpCoords, WireElectronState.WIRE);
+
+        Set<Cell> neighbors1Cell = new HashSet<>();
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.VOID));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.ELECTRON_TAIL));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.WIRE));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.ELECTRON_TAIL));
+        neighbors1Cell.add(new Cell(tmpCoords, WireElectronState.VOID));
+
+        Assert.assertEquals("Wire should stay wire",
+                WireElectronState.WIRE, wireWorld.nextCellState(wireCell,
                         neighbors1Cell));
 
     }

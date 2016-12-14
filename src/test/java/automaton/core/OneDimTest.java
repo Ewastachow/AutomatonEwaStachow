@@ -72,4 +72,44 @@ public class OneDimTest {
 
     }
 
+    @Test
+    public void nextCellState45Situation2() throws Exception {
+
+        OneDim od = new OneDim(20, 45);
+
+        CellCoordinates coords1d = new Coords1D(4);
+        CellCoordinates coords1dRight = new Coords1D(5);
+        CellCoordinates coords1dLeft = new Coords1D(3);
+
+        Cell aliveCell = new Cell(coords1d, BinaryState.ALIVE);
+
+        Set<Cell> situation2 = new HashSet<>();
+        situation2.add(new Cell(coords1dLeft, BinaryState.ALIVE));
+        situation2.add(new Cell(coords1dRight, BinaryState.DEAD));
+
+        Assert.assertEquals("AliveCell in second situation, should be Dead rule 45",
+                BinaryState.DEAD, od.nextCellState(aliveCell, situation2));
+
+    }
+
+    @Test
+    public void nextCellState45Situation6() throws Exception {
+
+        OneDim od = new OneDim(20, 45);
+
+        CellCoordinates coords1d = new Coords1D(4);
+        CellCoordinates coords1dRight = new Coords1D(5);
+        CellCoordinates coords1dLeft = new Coords1D(3);
+
+        Cell aliveCell = new Cell(coords1d, BinaryState.ALIVE);
+
+        Set<Cell> situation6 = new HashSet<>();
+        situation6.add(new Cell(coords1dLeft, BinaryState.DEAD));
+        situation6.add(new Cell(coords1dRight, BinaryState.DEAD));
+
+        Assert.assertEquals("AliveCell in sixth situation, should be Alive rule 45",
+                BinaryState.ALIVE, od.nextCellState(aliveCell, situation6));
+
+    }
+
 }
