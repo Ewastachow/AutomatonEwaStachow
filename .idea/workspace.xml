@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b191ebdd-798e-4a82-9a9e-6e3826290724" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/Automaton.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/Automaton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/Automaton1Dim.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/Automaton1Dim.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/Automaton2Dim.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/Automaton2Dim.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/GameOfLife.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/GameOfLife.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/LangtonAnt.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/LangtonAnt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/OneDim.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/OneDim.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/WireWorld.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/WireWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/state/AntState.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/state/AntState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/state/BinaryState.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/state/BinaryState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/state/CellState.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/state/CellState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/state/LangtonCell.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/state/LangtonCell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/state/QuadState.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/state/QuadState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/state/WireElectronState.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/state/WireElectronState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/stateFactory/CellStateFactory.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/stateFactory/CellStateFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/stateFactory/GeneralStateFactory.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/stateFactory/GeneralStateFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/core/stateFactory/UniformStateFactory.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/core/stateFactory/UniformStateFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/gui/App.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/gui/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/gui/AutomatonGUIController.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/gui/AutomatonGUIController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/automaton/gui/AutomatonGUISource.java" afterPath="$PROJECT_DIR$/src/main/java/automaton/gui/AutomatonGUISource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/automaton/core/GameOfLifeTest.java" afterPath="$PROJECT_DIR$/src/test/java/automaton/core/GameOfLifeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/automaton/core/LangtonAntTest.java" afterPath="$PROJECT_DIR$/src/test/java/automaton/core/LangtonAntTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/automaton/core/OneDimTest.java" afterPath="$PROJECT_DIR$/src/test/java/automaton/core/OneDimTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/automaton/core/WireWorldTest.java" afterPath="$PROJECT_DIR$/src/test/java/automaton/core/WireWorldTest.java" />
-    </list>
+    <list default="true" id="b191ebdd-798e-4a82-9a9e-6e3826290724" name="Default" comment="" />
     <ignored path="AutomatonEwaStachow.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1428,12 +1403,12 @@
       <updated>1481648600041</updated>
       <workItem from="1481648605918" duration="249000" />
       <workItem from="1481648907731" duration="17664000" />
-      <workItem from="1481692844892" duration="8951000" />
+      <workItem from="1481692844892" duration="10230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26864000" />
+    <option name="totallyTimeSpent" value="28143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
